@@ -37,7 +37,6 @@ class ItemsController:
             print(f"query_items error: {e}")
     
     def parse_items(self):
-        print(f"{self.colors['YELLOW']}Parsing items...{self.colors['RESET']}")
         regex = r'^(.*)-Inventory\.txt$'
         first_line_schema = ['Location', 'Name', 'ID', 'Count', 'Slots']
         file_names_list = []

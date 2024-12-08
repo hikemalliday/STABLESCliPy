@@ -20,10 +20,8 @@ class YellowTextController:
         self.eq_dir = eq_dir
 
     def query_yellow_text(self, params: dict):
-        
-        killer = "%" + params.get('killer', '') + "%"
+        killer = "%" + params.get('charName', '') + "%"
         zone = "%" + params.get('zone', '') + "%"
-        print(f"ZONE param: {zone}")
         query = """SELECT * FROM yellowText
         WHERE killer LIKE ? AND zone LIKE ?;"""
 
