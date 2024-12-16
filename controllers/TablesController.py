@@ -88,9 +88,9 @@ class TablesController:
     @staticmethod
     def set_eq_dir(conn, eq_dir):
         try:
-            query = """UPDATE eqDir (eqDir) VALUES (?)"""
+            query = """UPDATE eqDir SET eqDir = ? WHERE id = 1;""" 
             cursor = conn.cursor()
-            cursor.execute(query, eq_dir)
+            cursor.execute(query, (eq_dir,))
             conn.commit()
             return eq_dir if eq_dir else None
         except Exception as e:

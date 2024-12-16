@@ -28,7 +28,6 @@ class YellowTextController:
         try:
             cursor = self.conn.cursor()
             cursor.execute(query, (killer, zone))
-            print(cursor.fetchall())
             return cursor.fetchall()
         except sqlite3.Error as e:
             print(f"query_yellow_text error: {e}")

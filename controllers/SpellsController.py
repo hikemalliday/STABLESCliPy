@@ -31,7 +31,6 @@ class SpellsController:
             """
             cursor = self.conn.cursor()
             cursor.execute(query, (charName,))
-            print(cursor.fetchall())
             return cursor.fetchall()
         except Exception as e:
             print(f"query_spells error: {e}")

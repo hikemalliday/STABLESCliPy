@@ -63,7 +63,5 @@ if __name__ == "__main__":
         #yellow_text_controller.parse_yellow_text()
         # yellow_text_controller.query_yellow_text({})
         interface_controller.start()
-    except Exception as e:
-        print(f"main.py error: {e}")
     finally:
         conn.close()

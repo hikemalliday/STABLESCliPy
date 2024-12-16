@@ -26,12 +26,11 @@ class ItemsController:
         itemName = "%" + params.get('itemName', '') + "%"
         charName = "%" + params.get('charName', '') + "%"
         query = """SELECT * FROM items 
-        WHERE itemName LIKE ? AND charName LIKE ?;"""
+        WHERE itemName LIKE ? AND charName LIKE ?"""
 
         try:
             cursor = self.conn.cursor()
             cursor.execute(query, (itemName, charName))
-            print(cursor.fetchall())
             return cursor.fetchall()
         except sqlite3.Error as e:
             print(f"query_items error: {e}")
@@ -42,7 +41,7 @@ class ItemsController:
         file_names_list = []
 
         try:
-            files = os.listdir(self.eq_dir) if os.path.isdir(self.eq_dir) else []
+            files = os.listdir(self.eq_dir)
             for file in files:
                 matches = re.match(regex, file)
                 if matches:

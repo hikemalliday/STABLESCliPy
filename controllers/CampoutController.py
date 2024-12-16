@@ -29,7 +29,6 @@ class CampoutController:
         try:
             cursor = self.conn.cursor()
             cursor.execute(query, (charName, zone))
-            print(cursor.fetchall())
             return cursor.fetchall()
         except sqlite3.Error as e:
             print(f"query_campout error: {e}")
