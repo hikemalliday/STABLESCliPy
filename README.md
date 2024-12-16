@@ -1,4 +1,3 @@
 STABLECliPy
 
-Lightweight CLI version of STABLESElectron2. CLI version for a snappier UX, and so that my nerd friends will actually use my software. Log parsing is optimized by performing substring searches line by line, and then if substring matches, then we check regex (string matching is much faster under the hood than regex'ing every line).
-Contains a controller class for each database table, and a controller class for the CLI.
+Lightweight CLI version of STABLES app. No 3rd party deps. Just native python libs. No venv needed. Just clone and run main.py
