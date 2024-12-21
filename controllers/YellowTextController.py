@@ -33,7 +33,7 @@ class YellowTextController:
             print(f"query_yellow_text error: {e}")
 
     def parse_yellow_text(self):
-        print(f"{self.colors['YELLOW']}Parsing yellow texts...{self.colors['RESET']}")
+        print(f"Parsing yellow texts...")
         file_regex = r'eqlog_(.*)_P1999PVP\.txt'
         first_line_regex = r'^\[\w{3} \w{3} \d{2} \d{2}:\d{2}:\d{2} \d{4}\] .*'
         yellow_text_regex = r'\[(.*)\] \[PvP\] (.*) <(.*)> has been defeated by (.*) <(.*)> in (.*)!'
@@ -81,12 +81,12 @@ class YellowTextController:
                 cursor = self.conn.cursor()
                 cursor.executemany(query, self.parsed_yellow_text)
                 self.conn.commit()
-                print(f"{self.colors['GREEN']}Yellow texts inserted.{self.colors['RESET']}")
+                print(f"Yellow texts inserted.")
             except Exception as e:
-                print(f"{self.colors['RED']}parse_yellow_text mass insert error: {e}{self.colors['RESET']}")
+                print(f"parse_yellow_text mass insert error: {e}")
 
         except Exception as e:
-            print(f"{self.colors['RED']}parse_yellow_text error: {e}{self.colors['RESET']}")
+            print(f"parse_yellow_text error: {e}")
 
 
 

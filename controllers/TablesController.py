@@ -94,7 +94,7 @@ class TablesController:
             conn.commit()
             return eq_dir if eq_dir else None
         except Exception as e:
-            print(f"'\033[31m'set_eq_dir error:'\033[0m' {e}")
+            print(f"set_eq_dir error: {e}")
 
     @staticmethod
     def get_eq_dir(conn):
@@ -105,7 +105,7 @@ class TablesController:
             result = cursor.fetchone()
             return result[0] if result else None
         except Exception as e:
-            print(f"'\033[31m'get_eq_dir error:'\033[0m' {e}")
+            print(f"get_eq_dir error: {e}")
 
     
 

@@ -87,9 +87,9 @@ class ItemsController:
                     if items:
                         cursor.executemany(query, items)
                 self.conn.commit()
-                print(f"{self.colors['GREEN']}Successfully inserted items into database.{self.colors['RESET']}")
+                print(f"Successfully inserted items into database.")
             except Exception as e:
-                print(f"{self.colors['RED']}_parse_items_error, query block: {e}{self.colors['RESET']}")
+                print(f"_parse_items_error, query block: {e}")
         
         except Exception as e:
-            print(f"{self.colors['RED']}parse_items error: {e}{self.colors['RESET']}")
+            print(f"parse_items error: {e}")

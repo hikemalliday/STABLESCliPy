@@ -34,7 +34,7 @@ class CampoutController:
             print(f"query_campout error: {e}")
 
     def parse_campout(self):
-        print(f"{self.colors['YELLOW']}Parsing campout locations...{self.colors['RESET']}")
+        print(f"Parsing campout locations...")
         file_regex = f'^eqlog_(.*)_P1999PVP\.txt$'
         first_line_regex = r'^\[\w{3} \w{3} \d{2} \d{2}:\d{2}:\d{2} \d{4}\] .*'
         campout_regex = r"\[(.+?)\] You have entered (.+?)\."
@@ -91,10 +91,10 @@ class CampoutController:
                 cursor = self.conn.cursor()
                 cursor.executemany(query, campout_list)
                 self.conn.commit()
-                print(f"{self.colors['GREEN']}Successfully inserted campout locations into database.{self.colors['RESET']}")
+                print(f"Successfully inserted campout locations into database.")
             except Exception as e:
-                print(f"{self.colors['RED']}parse_campout mass insert error: {e}{self.colors['RESET']}")
+                print(f"parse_campout mass insert error: {e}")
 
         except Exception as e:
-            print(f"{self.colors['RED']}parse_campout error: {e}{self.colors['RESET']}")
+            print(f"parse_campout error: {e}")
             

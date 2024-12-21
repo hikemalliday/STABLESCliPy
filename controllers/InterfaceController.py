@@ -45,7 +45,7 @@ class InterfaceController:
 
     def parse_all(self):
         if not os.path.isdir(self.eq_dir):
-            print(f"""{self.colors['RED']}ERROR:{self.colors['RESET']}'{self.eq_dir}'{self.colors['RED']} is not a valid directory.{self.colors['RESET']}""")
+            print(f"""ERROR:'{self.eq_dir}' is not a valid directory.""")
             return
         TablesController.delete_rows(self.conn)
         self.items_controller.parse_items()

@@ -62,7 +62,7 @@ class SpellsController:
 
             
     def parse_spells(self):
-        print(f"{self.colors['YELLOW']}Parsing missing spells...{self.colors['RESET']}")
+        print(f"Parsing missing spells...")
         regex = f'^(.*)-Spellbook\.txt$'
         first_line_len = 2
         file_names_list = []
@@ -120,12 +120,12 @@ class SpellsController:
                 cursor = self.conn.cursor()
                 cursor.executemany(query, missing_spells_list)
                 self.conn.commit()
-                print(f"{self.colors['GREEN']}Successfully inserted missing spells into database.{self.colors['RESET']}")
+                print(f"Successfully inserted missing spells into database.")
             except Exception as e:
-                print(f"{self.colors['RED']}_parse_spells mass insert error: {e}{self.colors['RESET']}")
+                print(f"_parse_spells mass insert error: {e}")
 
         except Exception as e:
-            print(f"{self.colors['RED']}_parse_spells error: {e}{self.colors['RED']}")
+            print(f"_parse_spells error: {e}")
 
 
     
